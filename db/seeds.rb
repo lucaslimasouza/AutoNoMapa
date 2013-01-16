@@ -14,5 +14,5 @@ require Rails.root.join("db/br_populate")
 
 
 
-BRPopulate.populate
-CategoriesSeed.populate
+#BRPopulate.populate
+#CategoriesSeed.populate
