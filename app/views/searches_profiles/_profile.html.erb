@@ -1,0 +1,15 @@
+<%= image_tag @profile.avatar_url(:thumb) if @profile.avatar? %>
+<%=@profile.name %><br/>
+<%=@profile.nickname %><br/>
+<%=@profile.cell_phone %><br/>
+<%=@profile.phone %><br/>
+
+<%@profile.categories.each do |category|%>
+  <%= category.name %>
+<%end%> <br />
+<%=@profile.address.street %> <br />
+<%=@profile.address.neighborhood %> <br />
+<%=@profile.address.number %>
+<%=@profile.address.city.name %><br />
+<%=@profile.address.city.state.name %><br />
+<%=link_to "Indicar", indicate_indications_path(@profile) %>

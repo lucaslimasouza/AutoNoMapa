@@ -1,0 +1,32 @@
+<div class="span12 bg-silver box-result-search">
+  <h3> <%=@profile.name %> ( <%=@profile.nickname %> )</h3> <br />
+  <%= @profile.avatar? ? image_tag(@profile.avatar_url(:thumb)) : image_tag("/imgs/avatar.jpg", class: "avatar") %> <br />
+  <b>
+    <%= t('profile.phone') %>
+  </b>
+  <%=@profile.phone %><br/>
+  <b>
+    <%= t('profile.cell_phone') %>   
+  </b>
+    <%=@profile.cell_phone %><br/>
+  <b>
+    <%= t('profile.categories') %>
+  </b>
+   <%@profile.categories.each do |category|%>
+    <%= category.name %>
+  <%end%> <br />
+  <b>
+    <%= t('address.street') %>
+  </b>
+  <%=@profile.address.street %> <br />
+  <b>
+    <%= t('address.neighborhood') %>
+  </b>
+  <%=@profile.address.neighborhood %> <br />
+  <b>
+    <%= t('address.number') %>
+  </b>
+  <%=@profile.address.number %>
+
+  <%=link_to "Indicar", indicate_indication_path, class: "btn btn-info" %>
+</div>

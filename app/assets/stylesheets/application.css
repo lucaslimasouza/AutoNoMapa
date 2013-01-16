@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require bootstrap_and_overrides
+*/
+
+.center{
+ text-align:center;
+}
+.border{
+  border: 1px solid #ccc;
+}
+.bg-silver{
+  background-color: #fcfcfc;
+}
+.bg-white{
+  background-color: #fff;
+}
+.footer{
+  background-color: #f4f4f4;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.none{
+  display:none;
+}
+.bold{
+  font-weight:bold;
+}
+.input-big{
+  width:300px;
+}
+ul.menu-nav{
+  list-style:none;
+}
+ul.menu-nav li{
+ display:inline;
+ padding-left:3px;
+}
+ul.menu-nav li.menu-nav-sentence{
+  color:#fff;
+}
+.padding3 {
+  padding: 3%;
+}
+.box-result-search {
+  margin-top: 0.5%;
+  padding: 1%;
+}
+.main-container{
+   float: right;
+   width: 704px;
+}
+
+.head-question{
+    position: relative;
+    top: 5px;
+    color: #000;
+    font-weight:bold;
+}
+.color-title{
+  color: #bebebe;
+}
+div.row_categories{
+  margin-bottom: 2%;
+}
+div.box_catogories{
+  padding-left: 1%;
+}
+.category-title{
+  color:#666;
+}
+.content-categories{
+  padding-bottom: 4%;
+}
+.title_box_categories{  
+  margin-bottom: 1.5%;
+}

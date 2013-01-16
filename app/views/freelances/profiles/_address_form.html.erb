@@ -1,0 +1,8 @@
+<%=f.input :street, label: t('address.street') %>
+<%=f.input :number, label: t('address.number') %>
+<%=f.input :neighborhood, label: t('address.neighborhood') %>
+<%=f.label t('address.state') %>
+<%=select :search, :state,  State.all(:order => 'name').map {|state| [state.name, state.id]},{ prompt: t('address.state_prompt')} %>
+<%=f.input :city, label: t('address.city') do %>
+	<%=f.select :city_id, [], prompt: t('address.city_prompt')%>
+<%end%>

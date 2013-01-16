@@ -1,0 +1,23 @@
+<%= form_tag searches_profiles_path, :class =>"form-horizontal main-search", :method => :get do  %>
+<div class="search-position">
+    <div class="control-group">
+      <label class="control-label bold" for="inputCategoria">Categoria</label>
+        <div class="controls">
+           <%=text_field_tag :category, params[:category],:class => "input-big", :placeholder => "Ex:Eletricista" %>
+        </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label bold" for="inputCity">em</label>
+      <div class="controls">
+       <%=text_field_tag :city, params[:city], :class => "input-big", :placeholder => "Ex:Lavras" %>
+        <%=submit_tag 'Buscar', :name => nil, :class => "btn btn-info"%>
+      </div>
+    </div><br /><br />
+    <!--<div class="control-group">
+      <label class="control-label bold" for="inputNome">Acrescentar nome</label>
+      <div class="controls none">
+       <%=text_field_tag :name, params[:name],:class => "input-big", :placeholder => "Ex:João" %>
+      </div>
+    </div>-->
+</div>
+<%end%>

@@ -1,0 +1,19 @@
+<%=simple_form_for @profile, url: :freelances_profiles, html: {:multipart => true} do |f| %>
+
+  <%=f.input :avatar, :as => :file %><br/>
+
+    <%=f.input :name, label: t('profile.name') %>
+    <%=f.input :nickname, label: t('profile.nickname') %>
+    <%=f.label :kind, t('profile.kind') %>
+    <%=f.collection_radio_buttons :kind, [['fisica','Física'],['juridica','Jurídica']], :first,:last %>
+    <%=f.association :categories, label: t('profile.categories') %>
+
+    <%=f.simple_fields_for :address do |address_form| %>
+      <%= render 'address_form', :f => address_form %>
+    <%end%>
+
+    <%=f.input :phone, label: t('profile.phone') %>
+    <%=f.input :cell_phone, label: t('profile.cell_phone') %>
+
+  <%=f.submit t('profile.button.create') %>
+<%end%>

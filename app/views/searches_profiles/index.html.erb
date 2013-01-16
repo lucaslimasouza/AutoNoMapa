@@ -1,0 +1,10 @@
+<% @profiles.each do |profile| %>
+  <div class="span12 bg-silver box-result-search">
+      <h4> <%=profile.name %> ( <%=profile.nickname %> ) </h4>
+      <%= t('profile.phone') %> <%= profile.phone %>
+      <%= t('profile.cell_phone') %> <%= profile.cell_phone %><br/>
+      <%= t('profile.kind') %> <%= profile.kind %> <br />
+      <%=link_to 'Ver perfil', searches_profile_path(profile) %>
+  </div>
+<%end%>
+

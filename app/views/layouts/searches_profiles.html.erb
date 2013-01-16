@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AutoNoMapa</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%=flash[:notice]%>
+<%=render "layouts/head"%>
+
+<div class="container-fluid bg-silver">
+  <div class="row-fluid">
+    <div class="span12">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<%= render "categories" %>
+
+<%=render "layouts/footer"%>
+</body>
+</html>

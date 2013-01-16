@@ -1,0 +1,26 @@
+#enconding: UTF-8
+
+pt-BR:
+  profile:
+    name: Nome
+    nickname: Apelido
+    kind: Pessoa
+    categories: Categorias
+    phone: Telefone
+    cell_phone: Celular
+    button:
+      create: Criar Perfil
+
+  address:
+    street: Rua
+    number: Número
+    city: Cidade
+    city_prompt: Escolha uma Cidade
+    state: Estado
+    state_prompt: Escolha um Estado
+    neighborhood: Bairro
+
+  ask:
+    sure: Você tem certeza?
+  sign_up_seacher: 'Cadastrar como Buscador'
+
