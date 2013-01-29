@@ -1,49 +1,9 @@
-
-       <iframe src="https://www.facebook.com/plugins/like.php?href=YOUR_URL"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px"></iframe>
-
-          <div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId      : 'YOUR_APP_ID', // App ID
-            channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
-            status     : true, // check login status
-            cookie     : true, // enable cookies to allow the server to access the session
-            xfbml      : true  // parse XFBML
-          });
-          FB.api('/me', function(user) {
-            if (user) {
-              var image = document.getElementById('image');
-              image.src = 'https://graph.facebook.com/' + user.id + '/picture';
-              var name = document.getElementById('name');
-              name.innerHTML = user.name
-            }
-          });
-        };
-        // Load the SDK Asynchronously
-        (function(d){
-           var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-           if (d.getElementById(id)) {return;}
-           js = d.createElement('script'); js.id = id; js.async = true;
-           js.src = "//connect.facebook.net/en_US/all.js";
-           ref.parentNode.insertBefore(js, ref);
-         }(document));
-      </script>
-
-      <div align="center">
-        <img id="image"/>
-        <div id="name"></div>
-      </div>
-
-
 <% @profiles.each do |profile| %>
   <div class="span12 bg-silver box-result-search">
       <h4> <%=profile.name %> ( <%=profile.nickname %> ) </h4>
-      <%= t('profile.phone') %> <%= profile.phone %>
-      <%= t('profile.cell_phone') %> <%= profile.cell_phone %><br/>
-      <%= t('profile.kind') %> <%= profile.kind %> <br />
+      <b><%= t('profile.phone') %></b> <%= profile.phone %>
+      <b><%= t('profile.cell_phone') %></b> <%= profile.cell_phone %><br/>
+      <b><%= t('profile.kind') %></b> <%= profile.kind %> <br />
       <%=link_to 'Ver perfil', searches_profile_path(profile) %>
   </div>
 <%end%>

@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%=flash[:notice]%>
+  <div class="message">
+    <b><%=flash[:notice]%></b>
+  </div>
+
 <%=render "layouts/head"%>
 
 <div class="container-fluid bg-silver">

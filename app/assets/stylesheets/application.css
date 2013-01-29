@@ -83,6 +83,9 @@ div.box_catogories{
 .content-categories{
   padding-bottom: 4%;
 }
-.title_box_categories{  
+.title_box_categories{
   margin-bottom: 1.5%;
+}
+.message{
+  color: #800000;
 }
