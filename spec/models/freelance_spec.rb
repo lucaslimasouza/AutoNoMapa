@@ -5,7 +5,11 @@ describe Freelance do
   fixtures :freelances
   let(:category){mock_model(Category)}
 
-  context "association" do
+  context "#association" do
+    it { should have_one(:profile) }
+
+    it { should have_many(:indications) }
+
     it "should have one profile" do
       freelance = freelances(:first_freelance)
       profile = freelance.build_profile(profile_hash)

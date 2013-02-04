@@ -5,5 +5,5 @@ class Freelance < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
   has_one :profile
-  has_many :indication
+  has_many :indications
 end
