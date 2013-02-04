@@ -10,7 +10,24 @@ describe Profile do
     @profile.categories<< category
   end
 
-  context "validations" do
+  context "#fields" do
+    it { should respond_to(:cell_phone) }
+    it { should respond_to(:experience) }
+    it { should respond_to(:name) }
+    it { should respond_to(:nickname) }
+    it { should respond_to(:phone) }
+    it { should respond_to(:description) }
+    it { should respond_to(:courses) }
+    it { should respond_to(:kind) }
+    it { should respond_to(:city) }
+  end
+
+  context "#validations" do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:cell_phone) }
+    it { should validate_presence_of(:phone) }
+    it { should validate_presence_of(:kind) }
+
     it "should validates associated with categories" do
       @profile.categories.clear
       @profile.invalid?(:categories).should be_true
