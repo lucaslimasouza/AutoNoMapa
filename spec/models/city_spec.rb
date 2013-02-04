@@ -7,4 +7,9 @@ describe City do
     it { should respond_to(:state) }
   end
 
+  context "#association" do
+    it { should belong_to(:state) }
+    it { should have_many(:addresses) }
+  end
+
 end
