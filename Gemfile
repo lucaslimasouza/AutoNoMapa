@@ -25,6 +25,7 @@ gem 'carrierwave'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.11.0"
+  gem 'shoulda'
 end
 
 group :production do
