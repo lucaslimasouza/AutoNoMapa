@@ -18,8 +18,8 @@ class Profile < ActiveRecord::Base
   def self.search(profile)
      self.find :all, :joins => [:categories, :city],
        :conditions =>
-       ['lower(profiles.name) like ? or lower(cities.name) like ? or lower(categories.name) like ?' ,
-        profile[:name], profile[:city].capitalize , profile[:category].capitalize]
+       ['profiles.name like :name or cities.name like :city or categories.name like :category' ,
+        {:name => "%#{profile[:name]}%", :city => "%#{profile[:city].capitalize}%" , :category => "%#{profile[:category].capitalize}%"}]
   end
 
   private
