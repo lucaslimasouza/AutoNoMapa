@@ -18,7 +18,7 @@ class Profile < ActiveRecord::Base
   def self.search(profile)
      self.find :all, :joins => [:categories, :city],
        :conditions =>
-       ['lower(profiles.name) = ? or lower(cities.name) = ? or lower(categories.name) = ?' ,
+       ['lower(profiles.name) like ? or lower(cities.name) like ? or lower(categories.name) like ?' ,
         profile[:name], profile[:city].capitalize , profile[:category].capitalize]
   end
 
