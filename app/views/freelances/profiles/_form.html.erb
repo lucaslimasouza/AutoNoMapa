@@ -6,7 +6,9 @@
     <%=f.input :nickname, label: t('profile.nickname') %>
     <%=f.label :kind, t('profile.kind') %>
     <%=f.collection_radio_buttons :kind, [['fisica','Física'],['juridica','Jurídica']], :first,:last %>
-    <%=f.association :categories, label: t('profile.categories') %>
+    <%= f.input :categories, label: t('profile.categories') do %>
+      <%= f.select :categories, Category.all.map { |c| [c.name, c.id] }, include_blank: true %>
+    <% end %>
 
     <%=f.simple_fields_for :address do |address_form| %>
       <%= render 'address_form', :f => address_form %>
