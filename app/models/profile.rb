@@ -19,7 +19,7 @@ class Profile < ActiveRecord::Base
      self.find :all, :joins => [:categories, :city],
        :conditions =>
        ['cities.name like :city and categories.name like :category' ,
-        {:city => "#{profile[:city].capitalize}" , :category => "%#{profile[:category].capitalize}%"}]
+        {:city => "#{profile[:city].capitalize}" , :category => "%#{profile[:category]}%"}]
   end
 
   private
