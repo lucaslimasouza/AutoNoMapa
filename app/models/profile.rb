@@ -3,7 +3,7 @@ class Profile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   attr_accessible :cell_phone, :experience, :name,
     :nickname, :phone, :category_ids, :avatar, :description,
-    :courses, :address_attributes,:kind,:city
+    :courses, :address_attributes,:kind,:city, :categories
 
   has_and_belongs_to_many :categories
   belongs_to :freelance
@@ -18,7 +18,7 @@ class Profile < ActiveRecord::Base
   def self.search(profile)
      self.find :all, :joins => [:categories, :city],
        :conditions =>
-       ['(cities.name like :city and categories.name like :category) or cities.name like :city or categories.name like :category' ,
+       ['(cities.name like :city and categories.name like :category)' ,
         {:city => "#{profile[:city].capitalize}" , :category => "#{profile[:category].capitalize}"}]
   end
 
