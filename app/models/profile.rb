@@ -18,7 +18,7 @@ class Profile < ActiveRecord::Base
   def self.search(profile)
      self.find :all, :joins => [:categories, :city],
        :conditions =>
-       ['cities.name like :city or categories.name like :category' ,
+       ['cities.name like :city and categories.name like :category' ,
         {:city => "#{profile[:city]}" , :category => "%#{profile[:category]}%"}]
   end
 
